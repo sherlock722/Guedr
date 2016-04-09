@@ -24,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
         //Se accede a la View
         forecast = (ImageView) findViewById(R.id.forecast);
 
-        //Se crea un button
+        //Se crean referencias a los botones
         Button change_american_btn = (Button) findViewById(R.id.change_to_american_btn);
+        Button change_european_btn = (Button) findViewById(R.id.change_to_european_btn);
 
         change_american_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,13 +35,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        change_european_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                toChangeEuropean(v);
+
+            }
+        });
+
         //change_american_btn.setOnClickListener( new ChangeAmericanListener());
+    }
+
+    private void toChangeEuropean(View v) {
+        Log.v(MainActivity.class.getName(), "Se ejecuta al pulsar el botón de europa");
+        forecast.setImageResource(R.drawable.offline_weather2);
     }
 
     //Metodo a ejecutar cuando se pulsa un boton
     public void toChangeAMerican (View v){
-        Log.v(MainActivity.class.getName(), "Se ejecuta al pulsar el botón");
-        forecast.setImageResource(R.drawable.offline_weather2);
+        Log.v(MainActivity.class.getName(), "Se ejecuta al pulsar el botón de america");
+        forecast.setImageResource(R.drawable.offline_weather);
     }
 }
 

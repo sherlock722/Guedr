@@ -3,4 +3,5 @@
     <string name="hello_word">Hola AMundio!!</string>
     <string name="offline_wheather_image_description">offline_wheather</string>
     <string name="change_american_system">CAMBIAR SISTEMA AMERICANO</string>
+    <string name="change_european_system">CAMBIAR SISTEMA EUROPEO</string>
 </resources>
