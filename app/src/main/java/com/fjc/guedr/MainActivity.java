@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG="MainActivity";
     //private static final String TAG=MainActivity.class.getName(); --es lo mismo que la linea anterior;
@@ -28,23 +28,56 @@ public class MainActivity extends AppCompatActivity {
         Button change_american_btn = (Button) findViewById(R.id.change_to_american_btn);
         Button change_european_btn = (Button) findViewById(R.id.change_to_european_btn);
 
-        change_american_btn.setOnClickListener(new View.OnClickListener() {
+        /*change_american_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toChangeAMerican(v);
             }
-        });
+        });*/
 
-        change_european_btn.setOnClickListener(new View.OnClickListener() {
+        change_american_btn.setOnClickListener(this);
+
+
+        /*change_european_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 toChangeEuropean(v);
 
             }
-        });
+        });*/
+
+        change_european_btn.setOnClickListener(this);
 
         //change_american_btn.setOnClickListener( new ChangeAmericanListener());
+    }
+
+    //La clase activity implementa el metodo OnClick de la interfaz OnClickListener
+    @Override
+    public void onClick(View v) {
+
+        /*if (v.getId() == R.id.change_to_american_btn){
+
+            toChangeAMerican (v);
+
+        }else{
+
+            toChangeEuropean (v);
+        }*/
+
+        //Utilizando un switch
+        switch (v.getId()){
+
+            case R.id.change_to_american_btn:
+                toChangeAMerican(v);
+                break;
+            case R.id.change_to_european_btn:
+                toChangeEuropean(v);
+                break;
+
+        }
+
+
     }
 
     private void toChangeEuropean(View v) {
@@ -57,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
         Log.v(MainActivity.class.getName(), "Se ejecuta al pulsar el botón de america");
         forecast.setImageResource(R.drawable.offline_weather);
     }
+
+
 }
 
 //Clase que implementa la interfaz OnClickListener
