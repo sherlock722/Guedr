@@ -23,22 +23,35 @@
         android:contentDescription="@string/offline_wheather_image_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:src="@drawable/offline_weather"
         android:layout_weight="1"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/change_european_system"
-        android:id="@+id/change_to_european_btn"
-        android:layout_weight="0"
-        android:layout_gravity="center_horizontal"/>
+    <LinearLayout
 
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/change_american_system"
-        android:id="@+id/change_to_american_btn"
-        android:layout_weight="0"
-        android:layout_gravity="center_horizontal"/>
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="0">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/change_european_system"
+            android:id="@+id/change_to_european_btn"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/change_american_system"
+            android:id="@+id/change_to_american_btn"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>

@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button change_american_btn = (Button) findViewById(R.id.change_to_american_btn);
         Button change_european_btn = (Button) findViewById(R.id.change_to_european_btn);
 
+        //Formas de llamar al Listener
         /*change_american_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         change_american_btn.setOnClickListener(this);
 
-
+        //Formas de llamar al Listener
         /*change_european_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });*/
 
         change_european_btn.setOnClickListener(this);
+        //
 
+        //Otra Forma es creando la clase
         //change_american_btn.setOnClickListener( new ChangeAmericanListener());
     }
 
