@@ -51,6 +51,15 @@
             android:layout_weight="1"
             android:layout_gravity="center_horizontal"/>
 
+        <ToggleButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="New ToggleButton"
+            android:textOff="@string/change_european_system"
+            android:textOn="@string/change_american_system"
+            android:layout_weight="1"
+            android:id="@+id/forecastToggleButton"/>
+
     </LinearLayout>
 
 

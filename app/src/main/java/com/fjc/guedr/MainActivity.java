@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -27,6 +28,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Se crean referencias a los botones
         Button change_american_btn = (Button) findViewById(R.id.change_to_american_btn);
         Button change_european_btn = (Button) findViewById(R.id.change_to_european_btn);
+        final ToggleButton forecastToggleButton = (ToggleButton) findViewById(R.id.forecastToggleButton);
+
+        forecastToggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (forecastToggleButton.isChecked()) {
+
+                    toChangeEuropean(v);
+
+                }else{
+
+                    toChangeAMerican(v);
+                }
+
+            }
+        });
 
         //Formas de llamar al Listener
         /*change_american_btn.setOnClickListener(new View.OnClickListener() {
